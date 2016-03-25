@@ -7,6 +7,7 @@ module.exports = function(server){
 
     router.post('/',
         bodyparser,
+        server.middlewares.ensureAuthentificated,
         server.actions.events.create);
 
     router.put('/:id',
@@ -14,6 +15,7 @@ module.exports = function(server){
         server.actions.events.update);
 
     router.delete('/:id',
+        server.middlewares.ensureAuthentificated,
         server.actions.events.remove);
 
     router.post('/:id/inscription',

@@ -12,6 +12,15 @@ module.exports = function(server){
 	router.get('/:id',
 		 server.actions.users.show);
 
+	router.get('/:id/events',
+		server.actions.events.showListForUser);
+
+	router.get('/:id/pastEvents',
+		server.actions.events.showListForUser);
+
+	router.get('/:id/nextEvents',
+		server.actions.events.showListForUser);
+
 	//POST
 	router.post('/', 
 		bodyparser,
@@ -26,7 +35,7 @@ module.exports = function(server){
 
 	//DELETE
 	router.delete('/:id', 
-		server.actions.users.remove); 
+		server.actions.users.remove);
 
 
 

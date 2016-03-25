@@ -6,8 +6,6 @@ module.exports = function(server){
         var eventId = req.params.id;
         var currentUserId = req.auth.userId;
 
-        
-
         Event.findById(eventId, function(err, eventFound){
             if (err)
                 return res.status(500).send(err);
