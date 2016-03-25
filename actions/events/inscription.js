@@ -1,10 +1,12 @@
 module.exports = function(server){
     return function(req, res, next){
-        var Event = server.models.event;
-        var Participate = server.models.participant;
+        var Event = server.models.Event;
+        var Participate = server.models.Participant;
 
         var eventId = req.params.id;
         var currentUserId = req.auth.userId;
+
+        
 
         Event.findById(eventId, function(err, eventFound){
             if (err)
@@ -14,8 +16,8 @@ module.exports = function(server){
                 var now = new Date();
                 var eventDate = new Date(eventFound.date);
 
-                if (eventDate.getMilliseconds() < now.getMilliseconds())
-                    return res.status(500).send('La date événement est passée');
+                if (eventDate < now+1)
+                    return res.status(500).send('La date de l\'événement est passée');
 
                 var participate = new Participate({user_id: currentUserId, event_id: eventFound._id});
 

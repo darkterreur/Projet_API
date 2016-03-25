@@ -25,12 +25,11 @@ module.exports = function(server){
     category: [{
       type: server.mongoose.Schema.Types.ObjectId,
       ref: 'Category'
+    }],
+     user_owner: [{
+      type: server.mongoose.Schema.Types.ObjectId,
+      ref: 'User'
     }]
-    // ,
-    //  user_owner: [{
-    //   type: server.mongoose.Schema.Types.ObjectId,
-    //   ref: 'User'
-    // }]
   });
 
 

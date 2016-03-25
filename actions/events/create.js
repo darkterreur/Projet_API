@@ -1,7 +1,7 @@
 module.exports = function(server){
     return function(req, res, next){
-        var Event = server.models.event;
-        var Category = server.models.category;
+        var Event = server.models.Event;
+        var Category = server.models.Category;
         var event = new Event(req.body);
         var category = new Category(req.body.category);
 
@@ -30,6 +30,7 @@ module.exports = function(server){
             }
 
             event.category = category._id;
+            event.user_owner = req.auth.userId;
 
             event.save(function(err, data){
                 if(err) {
