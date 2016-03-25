@@ -1,13 +1,11 @@
 module.exports = function(server) {
     return function(req, res, next) {
         var Event = server.models.event;
-        var id = req.params.id;
-
-        Event.findByIdAndUpdate(id, { $set: req.body}, function (err, todo) {
+        Event.remove({_id: req.params.id}, function(err, data){
             if (err)
                 return res.status(500).send(err);
 
-            res.send(todo);
-        });
+            res.send(data);
+        })
     }
 };
