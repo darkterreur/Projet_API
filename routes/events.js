@@ -17,6 +17,7 @@ module.exports = function(server){
         server.actions.events.remove);
 
     router.post('/:id/inscription',
+        server.middlewares.ensureAuthentificated,
         server.actions.events.inscription);
 
     return router;
