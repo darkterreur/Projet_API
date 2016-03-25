@@ -3,8 +3,7 @@ module.exports = function(server) {
         create: require('./create')(server),
         participants: require('./participants')(server),
         update: require('./update')(server),
-        remove: require('./remove')(server)
-        // get: require('./get')(server),
-
+        remove: require('./remove')(server),
+        inscription: require('./inscription')(server)
     }
 };

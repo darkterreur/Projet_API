@@ -16,5 +16,8 @@ module.exports = function(server){
     router.delete('/:id',
         server.actions.events.remove);
 
+    router.post('/:id/inscription',
+        server.actions.events.inscription);
+
     return router;
 };
