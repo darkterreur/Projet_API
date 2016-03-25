@@ -5,6 +5,7 @@ module.exports = function(server) {
         update: require('./update')(server),
         remove: require('./remove')(server),
         inscription: require('./inscription')(server),
-        desinscription: require('./desinscription')(server)
+        desinscription: require('./desinscription')(server), 
+        showListForUser: require('./showListForUser')(server)
     }
 };
