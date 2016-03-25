@@ -8,6 +8,7 @@ module.exports = function(server){
     router.post('/',
         bodyparser,
         server.middlewares.ensureAuthentificated,
+        server.middlewares.ensureBodyFields(['category' , 'user_owner', 'title', 'description', 'date', 'place', 'max_participant_number','label']),
         server.actions.events.create);
 
     router.put('/:id',
