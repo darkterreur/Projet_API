@@ -10,9 +10,12 @@ module.exports = function(server){
             return res.status(500).send('Tous les champs sont obligatoires');
         }
 
+        if (event.max_participant_number < 10)
+            return res.status(500).send('Le nombre de participants doit être d\'au moins 10 personnes');
+
         category.label.toLocaleLowerCase();
 
-        Category.find({label: req.body.category.label}).exec(function(err, data){
+        Category.find({label: req.body.category.label.toLowerCase()}).exec(function(err, data){
             if(err)
                 return res.status(500).send(err);
 

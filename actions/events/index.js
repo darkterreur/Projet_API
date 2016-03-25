@@ -4,6 +4,7 @@ module.exports = function(server) {
         participants: require('./participants')(server),
         update: require('./update')(server),
         remove: require('./remove')(server),
-        inscription: require('./inscription')(server)
+        inscription: require('./inscription')(server),
+        desinscription: require('./desinscription')(server)
     }
 };

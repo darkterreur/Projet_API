@@ -20,5 +20,9 @@ module.exports = function(server){
         server.middlewares.ensureAuthentificated,
         server.actions.events.inscription);
 
+    router.delete('/:id/inscription',
+        server.middlewares.ensureAuthentificated,
+        server.actions.events.desinscription);
+
     return router;
 };

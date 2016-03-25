@@ -11,6 +11,12 @@ module.exports = function(server){
                 return res.status(500).send(err);
 
             if (eventFound) {
+                var now = new Date();
+                var eventDate = new Date(eventFound.date);
+
+                if (eventDate.getMilliseconds() < now.getMilliseconds())
+                    return res.status(500).send('La date événement est passée');
+
                 var participate = new Participate({user_id: currentUserId, event_id: eventFound._id});
 
                 participate.save(function(err, data){
