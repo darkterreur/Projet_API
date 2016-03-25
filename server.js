@@ -7,5 +7,5 @@ require('./middlewares')(server);
 require('./actions')(server);
 require('./routes')(server);
 
-console.log('Server listening on port 3030');
-server.listen(3030);
+console.log('Server listening ');
+server.listen(server.settings.port);
