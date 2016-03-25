@@ -1,6 +1,6 @@
 module.exports = function(server) {
     return function(req, res, next) {
-        var Event = server.models.event;
+        var Event = server.models.Event;
         var id = req.params.id;
 
         Event.findByIdAndUpdate(id, { $set: req.body}, function (err, todo) {

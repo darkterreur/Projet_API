@@ -1,6 +1,6 @@
 module.exports = function(server){
     return function(req, res, next){
-        var Participate = server.models.participant;
+        var Participate = server.models.Participant;
 
         var eventId = req.params.id;
         var currentUserId = req.auth.userId;
