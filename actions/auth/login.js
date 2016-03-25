@@ -32,7 +32,7 @@ module.exports = function(server){
 			if(err)
 				return res.status(500).send(err);
 
-			var accesToken = jwt.sign({accessToKen : user._id}, server.settings.TOKEN_SECRET);   //on attribut au accesToken le user._id
+			var accesToken = jwt.sign({accessToKen : token._id}, server.settings.TOKEN_SECRET);   //on attribut au accesToken le user._id
 			res.send(accesToken); // on renvoi l'accessToken
 		});
 	});

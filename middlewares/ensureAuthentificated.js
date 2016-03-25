@@ -11,13 +11,14 @@ module.exports = function(server){
 	return function(req, res, next){
 		var Token = server.models.Token;
 		var token = req.headers.authorization;
+		console.log(token);
 		if(!token)
 			return res.status(401).send('no Authorization'); 
 		jwt.verify(token, server.settings.TOKEN_SECRET, function(err, verified){ // si le token est présent on le check
-			console.log(verified);
-			Token.findById(verified.accessToken, function(err, data){  // on récupère ensuite le Id du user associé au token
+			Token.findById(verified.accessToKen, function(err, data){  // on récupère ensuite le Id du user associé au token
 				if(err)
 					return res.status(500).send(err);
+				console.log(data);
 				if(!data)
 					return res.status(401).send('invalid token');
 
