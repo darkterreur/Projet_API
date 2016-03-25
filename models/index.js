@@ -6,9 +6,10 @@ module.exports = function(server) {
   server.models = {
     // Todo: require('./Todo')(server),
     // User: require('./User')(server),
-    // Token: require('./Token')(server),
+    
     // Role: require('./Role')(server)
     User: require('./user')(server),
+    Token: require('./token')(server),
     event: require('./event')(server),
     category: require('./category')(server)
   };
