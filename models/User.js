@@ -3,11 +3,11 @@ module.exports = function(server){
 
     firstName: {
       type: String,
-      default: 'foo'
+      required: true
     },
     lastName: {
       type: String,
-      default: 'bar'
+      required: true
     },
     email: {
       type: String,

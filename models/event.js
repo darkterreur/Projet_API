@@ -11,7 +11,7 @@ module.exports = function(server){
       required: true
     },
     date: {
-      type: date,
+      type: Date,
       required: true,
     },
     place: {
@@ -19,7 +19,7 @@ module.exports = function(server){
       required: true,
     },
     max_participant_number: {
-      type: number,
+      type: Number,
       required: true
     },
     category: [{
