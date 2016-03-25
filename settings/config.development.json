@@ -1,0 +1,7 @@
+{
+  "port": 3030,
+  "TOKEN_SECRET": "secret",
+  "db": {
+    "mongo": "mongodb://localhost:27017/api-list"
+  }
+}
