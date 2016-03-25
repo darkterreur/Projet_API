@@ -15,8 +15,21 @@ module.exports = function(server){
 	//POST
 	router.post('/', 
 		bodyparser,
-		//server.middlewares.ensureBodyFields([ 'password', 'email', 'username' ]),
+		server.middlewares.ensureBodyFields([ 'password', 'email']),
 		server.actions.users.create);
+
+
+	//PUT
+	router.put('/:id', 
+		bodyparser,
+		server.actions.users.update); 
+
+	//DELETE
+	router.delete('/:id', 
+		server.actions.users.remove); 
+
+
+
 
 	return router;
 };

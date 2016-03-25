@@ -8,6 +8,8 @@ module.exports = function(server) {
   return {
     create: require('./create')(server),
     get: require('./get')(server),
-    show: require('./show')(server)
+    show: require('./show')(server),
+    update: require('./update')(server),
+    remove: require('./remove')(server)
   }
 };
