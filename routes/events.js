@@ -13,8 +13,8 @@ module.exports = function(server){
         bodyparser,
         server.actions.events.update);
 
-    // router.delete('/:name',
-    //     server.actions.events.remove);
+    router.delete('/:id',
+        server.actions.events.remove);
 
     return router;
 };
