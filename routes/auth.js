@@ -8,9 +8,9 @@ module.exports = function(server){
 		server.middlewares.ensureBodyFields(['email' , 'password']), 
 		server.actions.auth.login);
 
-	// router.post('/logout', 
-	// 	server.middlewares.ensureAuthentificated,
-	// 	server.actions.auth.logout);
+	 router.post('/logout', 
+	 	server.middlewares.ensureAuthentificated,
+	 	server.actions.auth.logout);
 return router;
 }
 
