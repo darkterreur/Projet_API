@@ -5,7 +5,7 @@ module.exports = function(server){
      user_id: [{
       type: server.mongoose.Schema.Types.ObjectId,
       ref: 'User'
-    }]
+    }],
      event_id: [{
       type: server.mongoose.Schema.Types.ObjectId,
       ref: 'Event'

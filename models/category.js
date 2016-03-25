@@ -4,7 +4,8 @@ module.exports = function(server){
   var CategorySchema = server.mongoose.Schema({
     label: {
       type: String,
-      required: true
+      required: true,
+      unique: true
     }
   });
 

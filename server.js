@@ -1,7 +1,6 @@
 var express = require('express');
 var server = express();
 
-
 require('./settings')(server);
 require('./models')(server);
 require('./middlewares')(server);
