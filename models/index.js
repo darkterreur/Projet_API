@@ -7,6 +7,7 @@ module.exports = function(server) {
     User: require('./user')(server),
     Token: require('./token')(server),
     event: require('./event')(server),
-    category: require('./category')(server)
+    category: require('./category')(server),
+    participant: require('./participant')(server)
   };
 };

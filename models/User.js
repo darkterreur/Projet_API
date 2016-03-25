@@ -2,12 +2,10 @@ module.exports = function(server){
   var UserSchema = server.mongoose.Schema({
 
     firstName: {
-      type: String,
-      required: true
+      type: String
     },
     lastName: {
-      type: String,
-      required: true
+      type: String
     },
     email: {
       type: String,
