@@ -4,7 +4,6 @@
 	Module ou on gère l'orsqu'un user se log
 */
 
-
 var sha1 = require('sha1'); 
 var jwt = require('jsonwebtoken');
 
