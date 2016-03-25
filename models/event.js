@@ -11,7 +11,7 @@ module.exports = function(server){
       required: true
     },
     date: {
-      type: date,
+      type: String,
       required: true,
     },
     place: {
@@ -19,20 +19,21 @@ module.exports = function(server){
       required: true,
     },
     max_participant_number: {
-      type: number,
+      type: Number,
       required: true
     },
     category: [{
       type: server.mongoose.Schema.Types.ObjectId,
       ref: 'Category'
     }]
-     user_owner: [{
-      type: server.mongoose.Schema.Types.ObjectId,
-      ref: 'User'
-    }]
+    // ,
+    //  user_owner: [{
+    //   type: server.mongoose.Schema.Types.ObjectId,
+    //   ref: 'User'
+    // }]
   });
 
 
-  UserSchema.plugin(require('mongoose-timestamp'));
-  return server.mongoose.model('User', UserSchema);
+  EventSchema.plugin(require('mongoose-timestamp'));
+  return server.mongoose.model('Event', EventSchema);
 };

@@ -3,6 +3,6 @@ module.exports = function(server){
     // todos: require('./todos')(server),
     // users: require('./users')(server),
     // auth : require('./auth')(server),
-    // roles: require('./roles')(server)
+    events: require('./events')(server)
   }
 };
